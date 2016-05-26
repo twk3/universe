@@ -9,6 +9,15 @@
   },
   "container": {
     "type": "DOCKER",
+    "volumes": [
+      {
+        "containerPath": "prometheus",
+        "persistent": {
+          "size": {{prometheus.volume-size}}
+        },
+        "mode": "RW"
+      }
+    ],
     "docker": {
       "image": "{{resource.assets.container.docker.prometheus-docker}}",
       "forcePullImage": true,
@@ -21,6 +30,9 @@
         }
       ]
     }
+  },
+  "residency": {
+    "taskLostBehavior": "WAIT_FOREVER"
   },
   "healthChecks": [
     {

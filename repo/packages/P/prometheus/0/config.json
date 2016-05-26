@@ -30,6 +30,11 @@
           "description": "SRV Name of the Prometheus Node Exporter",
           "type": "string"
         },
+        "volume-size": {
+          "type": "number",
+          "description": "Storage Volume Size (MiB)",
+          "default": 1024
+        },
         "healthcheck-grace-period-seconds": {
           "type": "number",
           "description": "Healthcheck grace period (sec)",
