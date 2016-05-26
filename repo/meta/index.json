@@ -427,7 +427,7 @@
       }
     },
     {
-      "currentVersion":"0.19.1-4",
+      "currentVersion":"0.19.1-5",
       "description":"Prometheus exporter for machine metrics.",
       "framework":false,
       "name":"prometheus",
@@ -437,7 +437,7 @@
         "monitoring"
       ],
       "versions":{
-        "0.19.1-4":"0"
+        "0.19.1-5":"0"
       }
     },
     {
