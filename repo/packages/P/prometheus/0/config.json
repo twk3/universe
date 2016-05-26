@@ -12,13 +12,13 @@
         },
         "instances": {
           "type": "number",
-          "description": "Number of framework instances",
+          "description": "Number of instances",
           "default": 1
         },
         "cpus": {
           "type": "number",
           "description": "CPU requirements",
-          "default": 0.01
+          "default": 0.5
         },
         "mem": {
           "type": "number",
@@ -27,22 +27,22 @@
         },
         "healthcheck-grace-period-seconds": {
           "type": "number",
-          "description": "Memory requirements",
+          "description": "Healthcheck grace period (sec)",
           "default": 300
         },
         "healthcheck-interval-seconds": {
           "type": "number",
-          "description": "Memory requirements",
+          "description": "Healthcheck interval (sec)",
           "default": 60
         },
         "healthcheck-timeout-seconds": {
           "type": "number",
-          "description": "Memory requirements",
+          "description": "Healthcheck timeout (sec)",
           "default": 20
         },
         "healthcheck-max-consecutive-failures": {
           "type": "number",
-          "description": "Memory requirements",
+          "description": "Healthcheck max consecutive failures",
           "default": 5
         }
       },

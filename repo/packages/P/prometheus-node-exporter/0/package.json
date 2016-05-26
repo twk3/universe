@@ -9,7 +9,7 @@
   "scm": "https://github.com/prometheus/node_exporter.git",
   "website": "https://prometheus.io/",
   "postInstallNotes": "Thank you for installing Prometheus Node Exporter on Mesos.",
-  "preInstallNotes": "The Prometheus Node Exporter should have at least 128MB of RAM and 0.01 CPUs to perform successfully.",
+  "preInstallNotes": "The Prometheus Node Exporter should have at least 256MB of RAM and 0.01 CPUs to perform successfully.",
   "postUninstallNotes": "The Prometheus Node Exporter has been uninstalled and will no longer run.",
   "licenses": [
     {
