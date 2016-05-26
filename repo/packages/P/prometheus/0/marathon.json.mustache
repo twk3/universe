@@ -4,10 +4,14 @@
   "cpus": {{prometheus.cpus}},
   "mem": {{prometheus.mem}},
   "ports": [0],
+  "env": {
+    "NODE_EXPORTER_SRV": "{{prometheus.node-exporter-srv}}",
+  },
   "container": {
     "type": "DOCKER",
     "docker": {
       "image": "{{resource.assets.container.docker.prometheus-docker}}",
+      "forcePullImage": true,
       "network": "BRIDGE",
       "portMappings": [
         {

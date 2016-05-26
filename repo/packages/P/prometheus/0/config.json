@@ -25,6 +25,11 @@
           "description": "Memory requirements",
           "default": 2048
         },
+        "node-exporter-srv": {
+          "default": "_node-exporter.prometheus._tcp.marathon.mesos",
+          "description": "SRV Name of the Prometheus Node Exporter",
+          "type": "string"
+        },
         "healthcheck-grace-period-seconds": {
           "type": "number",
           "description": "Healthcheck grace period (sec)",

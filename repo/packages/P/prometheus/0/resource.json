@@ -7,7 +7,7 @@
   "assets": {
     "container": {
       "docker": {
-        "prometheus-docker": "prom/prometheus:0.19.1"
+        "prometheus-docker": "mesosphere/prometheus"
       }
     }
   }
