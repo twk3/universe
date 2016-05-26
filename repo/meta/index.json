@@ -427,6 +427,35 @@
       }
     },
     {
+      "currentVersion":"0.19.1-1",
+      "description":"Prometheus exporter for machine metrics.",
+      "framework":false,
+      "name":"prometheus",
+      "selected":false,
+      "tags":[
+        "prometheus",
+        "monitoring"
+      ],
+      "versions":{
+        "0.19.1-1":"0"
+      }
+    },
+    {
+      "currentVersion":"0.12.0-1",
+      "description":"Prometheus exporter for machine metrics.",
+      "framework":false,
+      "name":"prometheus-node_exporter",
+      "selected":false,
+      "tags":[
+        "prometheus",
+        "node_exporter",
+        "monitoring"
+      ],
+      "versions":{
+        "0.12.0-1":"0"
+      }
+    },
+    {
       "currentVersion":"1.2.1",
       "description":"Quobyte is a software defined and fault tolerant distributed file system running on commodity hardware.",
       "framework":true,

@@ -1,0 +1,60 @@
+{
+  "type": "object",
+  "properties": {
+    "prometheus": {
+      "type": "object",
+      "description": "Prometheus Server specific properties",
+      "properties": {
+        "name": {
+          "default": "prometheus/server",
+          "description": "Name for this Prometheus instance",
+          "type": "string"
+        },
+        "instances": {
+          "type": "number",
+          "description": "Number of framework instances",
+          "default": 1
+        },
+        "cpus": {
+          "type": "number",
+          "description": "CPU requirements",
+          "default": 0.01
+        },
+        "mem": {
+          "type": "number",
+          "description": "Memory requirements",
+          "default": 2048
+        },
+        "healthcheck-grace-period-seconds": {
+          "type": "number",
+          "description": "Memory requirements",
+          "default": 300
+        },
+        "healthcheck-interval-seconds": {
+          "type": "number",
+          "description": "Memory requirements",
+          "default": 60
+        },
+        "healthcheck-timeout-seconds": {
+          "type": "number",
+          "description": "Memory requirements",
+          "default": 20
+        },
+        "healthcheck-max-consecutive-failures": {
+          "type": "number",
+          "description": "Memory requirements",
+          "default": 5
+        }
+      },
+      "required": [
+        "instances",
+        "cpus",
+        "mem",
+        "healthcheck-grace-period-seconds",
+        "healthcheck-interval-seconds",
+        "healthcheck-timeout-seconds",
+        "healthcheck-max-consecutive-failures"
+      ]
+    }
+  }
+}
