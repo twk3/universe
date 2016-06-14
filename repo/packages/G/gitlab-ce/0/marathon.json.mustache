@@ -4,7 +4,7 @@
   "mem": {{service.mem}},
   "instances": 1,
   "env": {
-      "GITLAB_OMNIBUS_CONFIG": "{{#routing.virtual-host}}external_url 'http://{{routing.virtual-host}}/'; {{/routing.virtual-host}}unicorn['worker_processes'] = 1;"
+      "GITLAB_OMNIBUS_CONFIG": "{{#routing.virtual-host}}external_url 'http://{{routing.virtual-host}}/'; {{/routing.virtual-host}}{{#high-availability.enabled}} postgresql['enable']=false; gitlab_rails['db_host'] = '{{high-availability.postgres.host}}'; gitlab_rails['db_password']='{{high-availability.postgres.password}}'; gitlab_rails['db_username']='{{high-availability.postgres.user}}'; gitlab_rails['db_database']='{{high-availability.postgres.database}}'; redis['enable'] = false; gitlab_rails['redis_host']='{{high-availability.redis.host}}'; {{/high-availability.enabled}}unicorn['worker_processes'] = 1;"
   },
   "container": {
        "type": "DOCKER",
