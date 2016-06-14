@@ -5,8 +5,8 @@
       "description": "GitLab CE configuration properties",
       "type": "object",
       "properties": {
-        "framework-name": {
-          "description": "The framework name to register with Mesos.",
+        "name": {
+          "description": "The name of this DC/OS service.",
           "type": "string",
           "default": "gitlab-ce"
         },
@@ -22,22 +22,16 @@
             "default": 1024.0,
             "minimum": 1024.0
         },
-        "mesos-master": {
-            "description": "URI of this cluster's Mesos master.",
-            "type": "string",
-            "default": "zk://leader.mesos:2181/mesos"
-        },
         "role": {
           "default": "*",
-          "description": "Deploy gitlab only on nodes with this role.",
+          "description": "Deploy GitLab only on nodes with this role.",
           "type": "string"
         }
       },
       "required": [
-        "framework-name",
+        "name",
         "cpus",
-        "mem",
-        "mesos-master"
+        "mem"
       ]
     }
   },
