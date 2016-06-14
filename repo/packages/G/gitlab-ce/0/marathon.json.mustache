@@ -36,12 +36,11 @@
        ]
    },
    "acceptedResourceRoles": [ "{{gitlab-ce.role}}" ],
-   "healthChecks": [
+  "healthChecks": [
     {
-      "path": "/service/{{gitlab-ce.name}}",
-      "portIndex": 0,
-      "protocol": "HTTP",
-      "gracePeriodSeconds": 30,
+      "protocol": "COMMAND",
+      "command": { "value": "curl --fail ${HOST}:${PORT0}/help" },
+      "gracePeriodSeconds": 300,
       "intervalSeconds": 60,
       "timeoutSeconds": 20,
       "maxConsecutiveFailures": 3
