@@ -60,7 +60,7 @@
         }
       },
       "required": [
-        "virtual-host"
+        "enabled"
       ]
     }
   },
