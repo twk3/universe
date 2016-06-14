@@ -10,7 +10,7 @@
        "type": "DOCKER",
        "docker": {
            "image": "{{resource.assets.container.docker.gitlab-ce}}",
-           "network" : "HOST",
+           "network" : "BRIDGE",
            "portMappings": [
              { "hostPort": 0, "containerPort": 80, "protocol": "tcp" },
              { "hostPort": 0, "containerPort": 443, "protocol": "tcp" },
