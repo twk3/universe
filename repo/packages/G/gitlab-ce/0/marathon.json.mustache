@@ -6,12 +6,17 @@
   "env": {
       "GITLAB_OMNIBUS_CONFIG": "unicorn['worker_processes'] = 1;"
   },
-  "ports": [0, 0],
+  "ports": [0, 0, 0],
   "container": {
        "type": "DOCKER",
        "docker": {
            "image": "{{resource.assets.container.docker.gitlab-ce}}",
-           "network" : "HOST"
+           "network" : "HOST",
+           "portMappings": [
+             { "hostPort": 0, "containerPort": 80, "protocol": "tcp" },
+             { "hostPort": 0, "containerPort": 443, "protocol": "tcp" },
+             { "hostPort": 0, "containerPort": 22, "protocol": "tcp" }
+           ]
        },
        "volumes": [
            {
@@ -34,7 +39,7 @@
    "acceptedResourceRoles": [ "{{gitlab-ce.role}}" ],
    "healthChecks": [
     {
-      "path": "/service/{{gitlab-ce.framework-name}}",
+      "path": "/service/{{jenkins.framework-name}}",
       "portIndex": 0,
       "protocol": "HTTP",
       "gracePeriodSeconds": 30,
