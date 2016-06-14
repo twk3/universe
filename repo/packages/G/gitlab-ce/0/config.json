@@ -5,15 +5,10 @@
       "description": "GitLab CE configuration properties",
       "type": "object",
       "properties": {
-        "application-name": {
-          "description": "The application name to register with Mesos.",
+        "framework-name": {
+          "description": "The framework name to register with Mesos.",
           "type": "string",
           "default": "gitlab-ce"
-        },
-        "host": {
-            "description": "The GitLab hostname that the web ui will be reachable on",
-            "type": "string",
-            "default": "$HOST"
         },
         "cpus": {
             "description": "CPU shares to allocate to GitLab.",
