@@ -57,6 +57,38 @@
           "description": "Whether to use external Postgres and Redis servers to enable a highly available deployment of GitLab CE. By default, this is false.",
           "type": "boolean",
           "default": false
+        },
+        "postgres": {
+          "description": "Postgres connection properties",
+          "type": "object",
+          "properties": {
+            "host": {
+              "description": "Postgres host",
+              "type": "string"
+            },
+            "database": {
+              "description": "Postgres database",
+              "type": "string"
+            },
+            "user": {
+              "description": "Postgres user",
+              "type": "string"
+            },
+            "password": {
+              "description": "Postgres password",
+              "type": "string"
+            }
+          }
+        },
+        "redis": {
+          "description": "Redis connection properties",
+          "type": "object",
+          "properties": {
+            "host": {
+              "description": "Redis host",
+              "type": "string"
+            }
+          }
         }
       },
       "required": [
