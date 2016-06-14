@@ -34,7 +34,7 @@
         }
       },
       "required": [
-        "application-name",
+        "framework-name",
         "host",
         "cpus",
         "mem",
