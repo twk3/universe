@@ -4,7 +4,7 @@
   "mem": {{gitlab-ce.mem}},
   "instances": 1,
   "env": {
-      "GITLAB_OMNIBUS_CONFIG": "unicorn['worker_processes'] = 1;"
+      "GITLAB_OMNIBUS_CONFIG": "{{#gitlab-ce.virtual-host}}external_url 'http://{{gitlab-ce.virtual-host}}/'; {{/gitlab-ce.virtual-host}}unicorn['worker_processes'] = 1;"
   },
   "container": {
        "type": "DOCKER",
