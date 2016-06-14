@@ -1,0 +1,21 @@
+{
+  "packagingVersion": "2.0",
+  "name": "gitlab-ce",
+  "version": "8.8.4",
+  "scm": "https://gitlab.com/gitlab-org/gitlab-ce",
+  "maintainer": "support@gitlab.com",
+  "website": "https://about.gitlab.com/",
+  "framework": true,
+  "description": "GitLab",
+  "tags": ["continuous-integration", "ci", "vcs", "version-control-software"],
+  "preInstallNotes": "GitLab!",
+  "postInstallNotes": "GitLab has been installed.",
+  "postUninstallNotes": "GitLab has been uninstalled. Note that any data persisted to a NFS share still exists and will need to be manually removed.",
+  "licenses": [
+    {
+      "name": "MIT License",
+      "url": "https://gitlab.com/gitlab-org/gitlab-ce/raw/master/LICENSE"
+    }
+  ],
+  "selected": false
+}

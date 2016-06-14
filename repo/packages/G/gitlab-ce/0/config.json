@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "properties": {
+    "gitlab-ce": {
+      "description": "GitLab CE configuration properties",
+      "type": "object",
+      "properties": {
+        "application-name": {
+          "description": "The application name to register with Mesos.",
+          "type": "string",
+          "default": "gitlab-ce"
+        },
+        "host": {
+            "description": "The GitLab hostname that the web ui will be reachable on",
+            "type": "string",
+            "default": "$HOST"
+        },
+        "cpus": {
+            "description": "CPU shares to allocate to GitLab.",
+            "type": "number",
+            "default": 1.0,
+            "minimum": 0.1
+        },
+        "mem": {
+            "description": "Memory to allocate to GitLab.",
+            "type": "number",
+            "default": 1024.0,
+            "minimum": 1024.0
+        },
+        "mesos-master": {
+            "description": "URI of this cluster's Mesos master.",
+            "type": "string",
+            "default": "zk://leader.mesos:2181/mesos"
+        },
+        "role": {
+          "default": "*",
+          "description": "Deploy gitlab only on nodes with this role.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "application-name",
+        "host",
+        "cpus",
+        "mem",
+        "mesos-master"
+      ]
+    }
+  },
+  "required": [
+    "gitlab-ce"
+  ]
+}

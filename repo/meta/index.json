@@ -191,6 +191,22 @@
       }
     },
     {
+      "currentVersion":"8.8.4",
+      "description":"GitLab",
+      "framework":true,
+      "name":"gitlab-ce",
+      "selected":false,
+      "tags":[
+        "continuous-integration",
+        "ci",
+        "vcs",
+        "version-control-software"
+      ],
+      "versions":{
+        "8.8.4":"0"
+      }
+    },
+    {
       "currentVersion":"0.1.8",
       "description":"Hadoop Distributed File System (HDFS), Highly Available",
       "framework":true,
