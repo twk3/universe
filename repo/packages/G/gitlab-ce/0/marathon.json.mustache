@@ -1,0 +1,54 @@
+{
+  "id": "{{gitlab-ce.application-name}}",
+  "cpus": {{gitlab-ce.cpus}},
+  "mem": {{gitlab-ce.mem}},
+  "instances": 1,
+  "env": {
+      "GITLAB_OMNIBUS_CONFIG": "external_url 'http://{{gitlab-ce.host}}/'; unicorn['worker_processes'] = 1;"
+  },
+  "ports": [0, 0],
+  "container": {
+       "type": "DOCKER",
+       "docker": {
+           "image": "{{resource.assets.container.docker.gitlab-ce}}",
+           "network" : "HOST"
+       },
+       "volumes": [
+           {
+               "containerPath": "/etc/gitlab",
+               "hostPath": "/srv/gitlab/config",
+               "mode": "RW"
+           },
+           {
+               "containerPath": "/var/log/gitlab",
+               "hostPath": "/srv/gitlab/logs",
+               "mode": "RW"
+           },
+           {
+               "containerPath": "/var/opt/gitlab",
+               "hostPath": "/srv/gitlab/data",
+               "mode": "RW"
+           }
+       ]
+   },
+   "acceptedResourceRoles": [ "{{gitlab-ce.role}}" ],
+   "healthChecks": [
+    {
+      "path": "/service/{{gitlab-ce.application-name}}",
+      "portIndex": 0,
+      "protocol": "HTTP",
+      "gracePeriodSeconds": 30,
+      "intervalSeconds": 60,
+      "timeoutSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ],
+  "labels": {
+    "MARATHON_SINGLE_INSTANCE_APP": "true",
+    "DCOS_PACKAGE_FRAMEWORK_NAME": "{{gitlab-ce.application-name}}"
+  },
+  "upgradeStrategy":{
+    "minimumHealthCapacity": 0,
+    "maximumOverCapacity": 0
+  }
+}
