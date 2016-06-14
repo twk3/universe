@@ -34,7 +34,7 @@
    "acceptedResourceRoles": [ "{{gitlab-ce.role}}" ],
    "healthChecks": [
     {
-      "path": "/help",
+      "path": "/service/{{gitlab-ce.framework-name}}",
       "portIndex": 0,
       "protocol": "HTTP",
       "gracePeriodSeconds": 30,
