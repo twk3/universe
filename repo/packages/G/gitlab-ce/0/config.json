@@ -1,8 +1,8 @@
 {
   "type": "object",
   "properties": {
-    "gitlab-ce": {
-      "description": "GitLab CE configuration properties",
+    "service": {
+      "description": "GitLab CE service properties",
       "type": "object",
       "properties": {
         "name": {
@@ -11,16 +11,16 @@
           "default": "gitlab-ce"
         },
         "cpus": {
-            "description": "CPU shares to allocate to GitLab.",
-            "type": "number",
-            "default": 1.0,
-            "minimum": 0.1
+          "description": "CPU shares to allocate to GitLab.",
+          "type": "number",
+          "default": 1.0,
+          "minimum": 0.1
         },
         "mem": {
-            "description": "Memory to allocate to GitLab.",
-            "type": "number",
-            "default": 1024.0,
-            "minimum": 1024.0
+          "description": "Memory to allocate to GitLab.",
+          "type": "number",
+          "default": 1024.0,
+          "minimum": 1024.0
         },
         "role": {
           "default": "*",
@@ -28,14 +28,43 @@
           "type": "string"
         },
         "virtual-host": {
-            "description": "The virtual host address to configure for integration with Marathon-lb.",
-            "type": "string"
+          "description": "The virtual host address to configure for integration with Marathon-lb.",
+          "type": "string"
         }
       },
       "required": [
         "name",
         "cpus",
         "mem"
+      ]
+    },
+    "routing": {
+      "description": "GitLab CE routing properties",
+      "type": "object",
+      "properties": {
+        "https-redirect": {
+          "description": "Whether Marathon-lb should redirect HTTP traffic to HTTPS. This requires 'virtual-host' to be set. By default, this is false.",
+          "type": "boolean",
+          "default": false
+        },
+        "virtual-host": {
+          "description": "The virtual host address to configure for integration with Marathon-lb.",
+          "type": "string"
+        }
+      }
+    },
+    "high-availability": {
+      "description": "GitLab CE high availability properties",
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "description": "Whether to use external Postgres and Redis servers to enable a highly available deployment of GitLab CE. By default, this is false.",
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "required": [
+        "virtual-host"
       ]
     }
   },
