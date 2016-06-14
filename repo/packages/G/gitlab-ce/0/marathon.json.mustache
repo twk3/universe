@@ -1,5 +1,5 @@
 {
-  "id": "{{gitlab-ce.framework-name}}",
+  "id": "{{gitlab-ce.name}}",
   "cpus": {{gitlab-ce.cpus}},
   "mem": {{gitlab-ce.mem}},
   "instances": 1,
@@ -38,7 +38,7 @@
    "acceptedResourceRoles": [ "{{gitlab-ce.role}}" ],
    "healthChecks": [
     {
-      "path": "/service/{{jenkins.framework-name}}",
+      "path": "/service/{{gitlab-ce.name}}",
       "portIndex": 0,
       "protocol": "HTTP",
       "gracePeriodSeconds": 30,
@@ -48,7 +48,7 @@
     }
   ],
   "labels": {
-    "DCOS_PACKAGE_FRAMEWORK_NAME": "{{gitlab-ce.framework-name}}"
+    "DCOS_SERVICE_NAME": "{{gitlab-ce.name}}"
   },
   "upgradeStrategy":{
     "minimumHealthCapacity": 0,
