@@ -47,6 +47,10 @@
     }
   ],
   "labels": {
+    {{#gitlab-ce.virtual-host}}
+    "HAPROXY_GROUP":"external",
+    "HAPROXY_0_VHOST":"{{gitlab-ce.virtual-host}}",
+    {{/gitlab-ce.virtual-host}}
     "DCOS_SERVICE_NAME": "{{gitlab-ce.name}}"
   },
   "upgradeStrategy":{

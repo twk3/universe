@@ -26,6 +26,10 @@
           "default": "*",
           "description": "Deploy GitLab only on nodes with this role.",
           "type": "string"
+        },
+        "virtual-host": {
+            "description": "The virtual host address to configure for integration with Marathon-lb.",
+            "type": "string"
         }
       },
       "required": [
