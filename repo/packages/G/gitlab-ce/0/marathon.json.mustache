@@ -1,10 +1,10 @@
 {
-  "id": "{{gitlab-ce.name}}",
-  "cpus": {{gitlab-ce.cpus}},
-  "mem": {{gitlab-ce.mem}},
+  "id": "{{service.name}}",
+  "cpus": {{service.cpus}},
+  "mem": {{service.mem}},
   "instances": 1,
   "env": {
-      "GITLAB_OMNIBUS_CONFIG": "{{#gitlab-ce.virtual-host}}external_url 'http://{{gitlab-ce.virtual-host}}/'; {{/gitlab-ce.virtual-host}}unicorn['worker_processes'] = 1;"
+      "GITLAB_OMNIBUS_CONFIG": "{{#routing.virtual-host}}external_url 'http://{{routing.virtual-host}}/'; {{/routing.virtual-host}}unicorn['worker_processes'] = 1;"
   },
   "container": {
        "type": "DOCKER",
@@ -35,7 +35,7 @@
            }
        ]
    },
-   "acceptedResourceRoles": [ "{{gitlab-ce.role}}" ],
+   "acceptedResourceRoles": [ "{{service.role}}" ],
   "healthChecks": [
     {
       "protocol": "COMMAND",
@@ -47,11 +47,12 @@
     }
   ],
   "labels": {
-    {{#gitlab-ce.virtual-host}}
+    {{#routing.virtual-host}}
     "HAPROXY_GROUP":"external",
-    "HAPROXY_0_VHOST":"{{gitlab-ce.virtual-host}}",
-    {{/gitlab-ce.virtual-host}}
-    "DCOS_SERVICE_NAME": "{{gitlab-ce.name}}"
+    "HAPROXY_0_VHOST":"{{routing.virtual-host}}",
+    "HAPROXY_0_REDIRECT_TO_HTTPS": "{{routing.https-redirect}}",
+    {{/routing.virtual-host}}
+    "DCOS_SERVICE_NAME": "{{service.name}}"
   },
   "upgradeStrategy":{
     "minimumHealthCapacity": 0,
