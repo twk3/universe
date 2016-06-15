@@ -17,7 +17,7 @@
            "portMappings": [
              { "hostPort": 0, "containerPort": 80, "protocol": "tcp" },
              { "hostPort": 0, "containerPort": 443, "protocol": "tcp" },
-             { "hostPort": 0, "containerPort": 22, "servicePort": 12222, "protocol": "tcp" }
+             { "hostPort": 0, "containerPort": 22, "servicePort": {{routing.ssh-port}}, "protocol": "tcp" }
            ]
        },
        "volumes": [
