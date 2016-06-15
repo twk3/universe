@@ -23,17 +23,17 @@
        "volumes": [
            {
                "containerPath": "/etc/gitlab",
-               "hostPath": "/srv/gitlab/config",
+               "hostPath": "{{service.host-volume}}/{{service.name}}/config",
                "mode": "RW"
            },
            {
                "containerPath": "/var/log/gitlab",
-               "hostPath": "/srv/gitlab/logs",
+               "hostPath": "{{service.host-volume}}/{{service.name}}/logs",
                "mode": "RW"
            },
            {
                "containerPath": "/var/opt/gitlab",
-               "hostPath": "/srv/gitlab/data",
+               "hostPath": "{{service.host-volume}}/{{service.name}}/data",
                "mode": "RW"
            }
        ]

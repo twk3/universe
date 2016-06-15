@@ -191,9 +191,9 @@
       }
     },
     {
-      "currentVersion":"8.8.4",
+      "currentVersion":"1-8.8.4",
       "description":"GitLab",
-      "framework":true,
+      "framework":false,
       "name":"gitlab-ce",
       "selected":false,
       "tags":[
@@ -203,7 +203,7 @@
         "version-control-software"
       ],
       "versions":{
-        "8.8.4":"0"
+        "1-8.8.4":"0"
       }
     },
     {
