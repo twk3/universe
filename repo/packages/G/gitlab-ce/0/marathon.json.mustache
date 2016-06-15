@@ -4,7 +4,7 @@
   "mem": {{service.mem}},
   "instances": 1,
   "env": {
-      "GITLAB_OMNIBUS_CONFIG": "{{#routing.virtual-host}}external_url 'http://{{routing.virtual-host}}/'; {{/routing.virtual-host}}{{#high-availability.enabled}} postgresql['enable']=false; gitlab_rails['db_host'] = '{{high-availability.postgres.host}}'; gitlab_rails['db_password']='{{high-availability.postgres.password}}'; gitlab_rails['db_username']='{{high-availability.postgres.user}}'; gitlab_rails['db_database']='{{high-availability.postgres.database}}'; redis['enable'] = false; gitlab_rails['redis_host']='{{high-availability.redis.host}}';{{/high-availability.enabled}} unicorn['worker_processes'] = 2;"
+      "GITLAB_OMNIBUS_CONFIG": "{{#routing.virtual-host}}external_url 'http://{{routing.virtual-host}}/'; gitlab_rails['gitlab_ssh_host'] = '{{routing.virtual-host}}:{{routing.ssh-port}}'; {{/routing.virtual-host}}{{#high-availability.enabled}} postgresql['enable']=false; gitlab_rails['db_host'] = '{{high-availability.postgres.host}}'; gitlab_rails['db_password']='{{high-availability.postgres.password}}'; gitlab_rails['db_username']='{{high-availability.postgres.user}}'; gitlab_rails['db_database']='{{high-availability.postgres.database}}'; redis['enable'] = false; gitlab_rails['redis_host']='{{high-availability.redis.host}}';{{/high-availability.enabled}} unicorn['worker_processes'] = 2;"
   },
   "container": {
        "type": "DOCKER",
@@ -14,7 +14,7 @@
            "portMappings": [
              { "hostPort": 0, "containerPort": 80, "protocol": "tcp" },
              { "hostPort": 0, "containerPort": 443, "protocol": "tcp" },
-             { "hostPort": 0, "containerPort": 22, "protocol": "tcp" }
+             { "hostPort": 0, "containerPort": 22, "servicePort": 12222, "protocol": "tcp" }
            ]
        },
        "volumes": [
@@ -43,7 +43,7 @@
       "gracePeriodSeconds": 300,
       "intervalSeconds": 60,
       "timeoutSeconds": 20,
-      "maxConsecutiveFailures": 3
+      "maxConsecutiveFailures": 5
     }
   ],
   "labels": {
