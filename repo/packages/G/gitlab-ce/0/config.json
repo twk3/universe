@@ -54,7 +54,8 @@
         "ssh-port": {
           "description": "The port that ssh clients will connect to againt the virtual-host.",
           "type": "integer",
-          "default": 2020
+          "default": 12222,
+          "minimum": 1024
         }
       }
     },
