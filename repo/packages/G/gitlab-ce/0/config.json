@@ -115,7 +115,7 @@
       "type": "object",
       "properties": {
         "enabled": {
-          "description": "Whether to use DC/OS external volumes to persist GitLab CE state. To run GitLab CE in a highly avaialble configuration, you cannot use external volumes and must ensure that the `host-volume` specified above is accessible by every agent in your DC/OS cluster or you pin to a hostname. By default, this is false.",
+          "description": "Whether to use DC/OS external volumes to persist GitLab CE state. To run GitLab CE in a highly avaialble configuration, you cannot use external volumes and must ensure that the `host-volume` specified above is accessible by every agent in your DC/OS cluster. By default, this is false.",
           "type": "boolean",
           "default": false
         }
