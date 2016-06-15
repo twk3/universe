@@ -43,6 +43,10 @@
           "type": "boolean",
           "default": false
         },
+        "pinned-hostname": {
+          "description": "Hostname of node to pin application to.",
+          "type": "string"
+        },
         "virtual-host": {
           "description": "The virtual host address to configure for integration with Marathon-lb.",
           "type": "string"
