@@ -46,6 +46,11 @@
         "virtual-host": {
           "description": "The virtual host address to configure for integration with Marathon-lb.",
           "type": "string"
+        },
+        "ssh-port": {
+          "description": "The port that ssh clients will connect to againt the virtual-host.",
+          "type": "integer",
+          "default": 2020
         }
       }
     },
