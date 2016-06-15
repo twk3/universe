@@ -50,6 +50,9 @@
     }
   ],
   "labels": {
+    {{#high-availability.enabled?}}
+    "MARATHON_SINGLE_INSTANCE_APP": "true",
+    {{/high-availability.enabled?}}
     {{#routing.virtual-host}}
     "HAPROXY_GROUP":"external",
     "HAPROXY_0_VHOST":"{{routing.virtual-host}}",
