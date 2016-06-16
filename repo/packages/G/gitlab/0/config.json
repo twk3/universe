@@ -2,7 +2,7 @@
   "type": "object",
   "properties": {
     "service": {
-      "description": "GitLab CE service properties",
+      "description": "GitLab service properties",
       "type": "object",
       "properties": {
         "name": {
@@ -40,7 +40,7 @@
       ]
     },
     "routing": {
-      "description": "GitLab CE routing properties",
+      "description": "GitLab routing properties",
       "type": "object",
       "properties": {
         "https-redirect": {
@@ -65,7 +65,7 @@
       }
     },
     "email": {
-      "description": "GitLab CE SMTP email config",
+      "description": "GitLab SMTP email config",
       "type": "object",
       "properties": {
         "enabled": {
@@ -128,11 +128,11 @@
       ]
     },
     "high-availability": {
-      "description": "GitLab CE high availability properties",
+      "description": "GitLab high availability properties",
       "type": "object",
       "properties": {
         "enabled": {
-          "description": "Whether to use external Postgres and Redis servers to enable a highly available deployment of GitLab CE. By default, this is false.",
+          "description": "Whether to use external Postgres and Redis servers to enable a highly available deployment of GitLab. By default, this is false.",
           "type": "boolean",
           "default": false
         },
@@ -186,6 +186,20 @@
       "required": [
         "enabled"
       ]
+    },
+    "edition": {
+      "description": "Optionally check to install Enterprise Edition. (For use if you have a license file from GitLab Inc)",
+      "type": "object",
+      "properties": {
+        "enterprise-edition": {
+          "description": "Whether to deploy the EE edition of the software. Defaults to false.",
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "required": [
+        "enterprise-edition"
+      ]
     }
   },
   "required": [
@@ -193,6 +207,7 @@
     "routing",
     "email",
     "high-availability",
-    "external-volumes"
+    "external-volumes",
+    "edition"
   ]
 }

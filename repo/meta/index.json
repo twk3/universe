@@ -191,10 +191,10 @@
       }
     },
     {
-      "currentVersion":"1-8.8.4",
+      "currentVersion":"1-8.8.5",
       "description":"GitLab",
       "framework":false,
-      "name":"gitlab-ce",
+      "name":"gitlab",
       "selected":false,
       "tags":[
         "continuous-integration",
@@ -203,7 +203,7 @@
         "version-control-software"
       ],
       "versions":{
-        "1-8.8.4":"0"
+        "1-8.8.5":"0"
       }
     },
     {
