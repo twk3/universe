@@ -59,10 +59,73 @@
         "ssh-port": {
           "description": "The port that ssh clients will connect to againt the virtual-host.",
           "type": "integer",
-          "default": 12222,
+          "default": 22222,
           "minimum": 1024
         }
       }
+    },
+    "email": {
+      "description": "GitLab CE SMTP email config",
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "description": "Whether to use external SMTP email server. By default, this is false.",
+          "type": "boolean",
+          "default": false
+        },
+        "address": {
+          "description": "Address of the SMTP server",
+          "type": "string"
+        },
+        "port": {
+          "description": "Port to access the SMTP server on",
+          "type": "integer",
+          "default": 25
+        },
+        "username": {
+          "description": "If your mail server requires authentication, set the username in this setting.",
+          "type": "string"
+        },
+        "password": {
+          "description": "If your mail server requires authentication, set the password in this setting.",
+          "type": "string"
+        },
+        "domain": {
+          "description": "SMTP HELO domain.",
+          "type": "string"
+        },
+        "authentication": {
+          "description": "If your mail server requires authentication, you need to specify the authentication type here. ('plain', 'login', 'cram_md5')",
+          "type": "string",
+          "default": "login"
+        },
+        "enable-starttls-auto": {
+          "description": "Detects if STARTTLS is enabled in your SMTP server and starts to use it. Defaults to true.",
+          "type": "boolean",
+          "default": true
+        },
+        "openssl-verify-mode": {
+          "description": "When using TLS, you can set how OpenSSL checks the certificate. ('none', 'peer', 'client_once', 'fail_if_no_peer_cert')",
+          "type": "string",
+          "default": "peer"
+        },
+        "tls": {
+          "description": "Enables the SMTP connection to use SMTP/TLS. Default to false.",
+          "type": "boolean",
+          "default": false
+        },
+        "email-from-address": {
+          "description": "From Address used in email headers",
+          "type": "string"
+        },
+        "email-reply-to-address": {
+          "description": "Reply-to-Address used in email headers",
+          "type": "string"
+        }
+      },
+      "required": [
+        "enabled"
+      ]
     },
     "high-availability": {
       "description": "GitLab CE high availability properties",
@@ -128,6 +191,7 @@
   "required": [
     "service",
     "routing",
+    "email",
     "high-availability",
     "external-volumes"
   ]
