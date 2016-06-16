@@ -192,7 +192,7 @@
     },
     {
       "currentVersion":"1-8.8.5",
-      "description":"GitLab",
+      "description":"Collaboration and source control management: code, test, and deploy together!",
       "framework":false,
       "name":"gitlab",
       "selected":false,
