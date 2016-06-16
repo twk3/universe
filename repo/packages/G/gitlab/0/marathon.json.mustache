@@ -9,7 +9,7 @@
   "container": {
        "type": "DOCKER",
        "docker": {
-           "image": "{{#edition.enterprise-edition}}{{resource.assets.container.docker.gitlab-ee}}{{/edition.enterprise-edition}}{{^edition.enterprise-edition}}{{resource.assets.container.docker.gitlab-ce}}{{/edition.enterprise-edition}}",
+           "image": "{{#enterprise.enterprise-edition}}{{resource.assets.container.docker.gitlab-ee}}{{/enterprise.enterprise-edition}}{{^enterprise.enterprise-edition}}{{resource.assets.container.docker.gitlab-ce}}{{/enterprise.enterprise-edition}}",
            "network" : "BRIDGE",
            "portMappings": [
              { "hostPort": 0, "containerPort": 80, "protocol": "tcp" },

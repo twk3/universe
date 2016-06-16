@@ -213,7 +213,7 @@
         "persistent-volumes"
       ]
     },
-    "edition": {
+    "enterprise": {
       "description": "Optionally check to install Enterprise Edition. (For use if you have a license file from GitLab Inc)",
       "type": "object",
       "properties": {
@@ -234,6 +234,6 @@
     "email",
     "high-availability",
     "single-node",
-    "edition"
+    "enterprise"
   ]
 }
