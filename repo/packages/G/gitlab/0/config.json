@@ -35,7 +35,7 @@
       ]
     },
     "routing": {
-      "description": "GitLab routing properties",
+      "description": "GitLab routing properties for use with Marathon-lb.",
       "type": "object",
       "properties": {
         "https-redirect": {
@@ -48,7 +48,7 @@
           "type": "string"
         },
         "ssh-port": {
-          "description": "The port that ssh clients will connect to againt the virtual-host.",
+          "description": "The port that ssh clients will connect to against the virtual-host.",
           "type": "integer",
           "default": 22222,
           "minimum": 1024
@@ -56,7 +56,7 @@
       }
     },
     "email": {
-      "description": "GitLab SMTP email config",
+      "description": "GitLab SMTP email config.",
       "type": "object",
       "properties": {
         "enabled": {
@@ -119,7 +119,7 @@
       ]
     },
     "high-availability": {
-      "description": "GitLab high availability properties",
+      "description": "GitLab high availability properties. If enabled, single-node properties WILL NOT be used.",
       "type": "object",
       "properties": {
         "enabled": {
@@ -181,11 +181,11 @@
               "description": "Whether to use DC/OS external volumes to persist GitLab state. By default, this is false.",
               "type": "boolean",
               "default": false
-            },
-            "required": [
-              "enabled"
-            ]
-          }
+            }
+          },
+          "required": [
+            "enabled"
+          ]
         },
         "persistent-volumes": {
           "description": "Persistent volumes configuration (only used if external volumes are disabled). Persistent volumes are created on one machine and Marathon will attempt to re-launch the task on the same machine. Note that if the machine is lost, your data may also be lost.",
@@ -200,12 +200,12 @@
               "description": "Size of data volume in MiB.",
               "type": "integer",
               "default": 10000
-            },
-            "required": [
-              "config-size",
-              "data-size"
-            ]
-          }
+            }
+          },
+          "required": [
+            "config-size",
+            "data-size"
+          ]
         }
       },
       "required": [
