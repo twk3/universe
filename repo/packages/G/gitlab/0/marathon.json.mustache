@@ -23,30 +23,30 @@
        "volumes": [
            {
                "containerPath": "/etc/gitlab",
-               {{#external-volumes.enabled}}
+               {{#storage.use-external-volumes}}
                "external": {
                   "name": "{{service.name}}-config",
                   "provider": "dvdi",
                   "options": { "dvdi/driver": "rexray" }
                },
-               {{/external-volumes.enabled}}
-               {{^external-volumes.enabled}}
-               "hostPath": "{{service.host-volume}}/{{service.name}}/config",
-               {{/external-volumes.enabled}}
+               {{/storage.use-external-volumes}}
+               {{^storage.use-external-volumes}}
+               "hostPath": "{{storage.host-volume}}/{{service.name}}/config",
+               {{/storage.use-external-volumes}}
                "mode": "RW"
            },
            {
                "containerPath": "/gitlab-data",
-               {{#external-volumes.enabled}}
+               {{#storage.use-external-volumes}}
                "external": {
                   "name": "{{service.name}}-data",
                   "provider": "dvdi",
                   "options": { "dvdi/driver": "rexray" }
                },
-               {{/external-volumes.enabled}}
-               {{^external-volumes.enabled}}
-               "hostPath": "{{service.host-volume}}/{{service.name}}/data",
-               {{/external-volumes.enabled}}
+               {{/storage.use-external-volumes}}
+               {{^storage.use-external-volumes}}
+               "hostPath": "{{storage.host-volume}}/{{service.name}}/data",
+               {{/storage.use-external-volumes}}
                "mode": "RW"
            }
        ]
