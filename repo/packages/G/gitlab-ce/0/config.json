@@ -109,6 +109,11 @@
           "type": "string",
           "default": "peer"
         },
+        "tls": {
+          "description": "Enables the SMTP connection to use SMTP/TLS. Default to false.",
+          "type": "boolean",
+          "default": false
+        },
         "email-from-address": {
           "description": "From Address used in email headers",
           "type": "string"
