@@ -6,9 +6,9 @@
   "maintainer": "support@gitlab.com",
   "website": "https://about.gitlab.com/",
   "framework": false,
-  "description": "GitLab",
+  "description": "Collaboration and source control management: code, test, and deploy together!",
   "tags": ["continuous-integration", "ci", "vcs", "version-control-software"],
-  "preInstallNotes": "GitLab!",
+  "preInstallNotes": "Having Marathon-lb installed and setting a virtual host in the config is required for being able to access GitLab.",
   "postInstallNotes": "GitLab has been installed.",
   "postUninstallNotes": "GitLab has been uninstalled. Note that any data persisted to a NFS share still exists and will need to be manually removed.",
   "licenses": [
