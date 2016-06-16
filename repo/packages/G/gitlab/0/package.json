@@ -1,7 +1,7 @@
 {
   "packagingVersion": "2.0",
-  "name": "gitlab-ce",
-  "version": "1-8.8.4",
+  "name": "gitlab",
+  "version": "1-8.8.5",
   "scm": "https://gitlab.com/gitlab-org/gitlab-ce",
   "maintainer": "support@gitlab.com",
   "website": "https://about.gitlab.com/",
@@ -15,6 +15,10 @@
     {
       "name": "MIT License",
       "url": "https://gitlab.com/gitlab-org/gitlab-ce/raw/master/LICENSE"
+    },
+    {
+      "name": "EE License",
+      "url": "https://gitlab.com/gitlab-org/gitlab-ee/raw/master/LICENSE"
     }
   ],
   "selected": false
