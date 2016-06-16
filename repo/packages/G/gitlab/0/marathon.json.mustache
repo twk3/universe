@@ -31,34 +31,52 @@
            }
            {{/high-availability.enabled}}
            {{^high-availability.enabled}}
+           {{#single-node.external-volumes.enabled}}
            {
                "containerPath": "/etc/gitlab",
-               {{#storage.use-external-volumes}}
                "external": {
                   "name": "{{service.name}}-config",
                   "provider": "dvdi",
                   "options": { "dvdi/driver": "rexray" }
                },
-               {{/storage.use-external-volumes}}
-               {{^storage.use-external-volumes}}
-               "hostPath": "{{storage.host-volume}}/{{service.name}}/config",
-               {{/storage.use-external-volumes}}
                "mode": "RW"
            },
            {
                "containerPath": "/gitlab-data",
-               {{#storage.use-external-volumes}}
                "external": {
                   "name": "{{service.name}}-data",
                   "provider": "dvdi",
                   "options": { "dvdi/driver": "rexray" }
                },
-               {{/storage.use-external-volumes}}
-               {{^storage.use-external-volumes}}
-               "hostPath": "{{storage.host-volume}}/{{service.name}}/data",
-               {{/storage.use-external-volumes}}
                "mode": "RW"
            }
+           {{/single-node.external-volumes.enabled}}
+           {{^single-node.external-volumes.enabled}}
+           {
+               "containerPath": "/etc/gitlab",
+               "hostPath": "config",
+               "mode": "RW"
+           },
+           {
+               "containerPath": "config",
+               "mode": "RW",
+               "persistent": {
+                  "size": {{single-node.config-volume-size}}
+               }
+           },
+           {
+               "containerPath": "/gitlab-data",
+               "hostPath": "data",
+               "mode": "RW"
+           },
+           {
+               "containerPath": "data",
+               "mode": "RW",
+               "persistent": {
+                  "size": {{single-node.data-volume-size}}
+               }
+           },
+           {{/single-node.external-volumes.enabled}}
            {{/high-availability.enabled}}
        ]
    },
